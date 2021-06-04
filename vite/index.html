@@ -8,16 +8,6 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module">
-      import process from "process";
-      import { Buffer } from "buffer";
-      import EventEmitter from "events";
-
-      window.global = window;
-      window.Buffer = Buffer;
-      window.process = process;
-      window.EventEmitter = EventEmitter;
-    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

@@ -1,20 +1,13 @@
 import { defineConfig } from "vite";
 import reactRefresh from "@vitejs/plugin-react-refresh";
-import inject from "@rollup/plugin-inject";
+import inject from "./plugin-inject-react-pdf-shims";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    reactRefresh(),
-    // inject({
-    //   Buffer: "buffer",
-    //   EventEmitter: "events",
-    // }),
-  ],
+  plugins: [inject(), reactRefresh()],
   resolve: {
     alias: {
-      crypto: "node_modules/crypto-browserify/index.js",
-      stream: "node_modules/stream-browserify/index.js",
+      stream: "stream-browserify",
       zlib: "browserify-zlib",
     },
   },
